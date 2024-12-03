@@ -1,0 +1,110 @@
+body, div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-align: center;
+    font-family: Algerian;
+}
+body {
+    padding: 5vw;
+    background-color: black;
+}
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+#calculator {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    position: relative;
+    background-color: #808080;
+    border-radius: 5vw;
+    padding: 5vw;
+}
+#calculator::before, #calculator::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 2.5vw;
+    border-radius: 5vw;
+    z-index: -1;
+    left: 50%;
+    bottom: 50%;
+    translate: -50% 50%;
+    background-image: conic-gradient(from var(--angle), #FF0000, #00FF00, #0000FF, #FF0000);
+    animation: body-animation 2.5s linear infinite;
+}
+@keyframes body-animation {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+h1 {
+    color: burlywood;
+    font-size: 4vw;
+}
+label, input, button {
+    margin: 2.5vw;
+}
+label {
+    display: block;
+    height: fit-content;
+    font-size: 4.14vw;
+    color: aquamarine;
+}
+input {
+    font-size: 3vw;
+    text-align: center;
+    background-color: #FF0000;
+}
+input ,input::placeholder {
+    color: chartreuse;
+}
+button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 3.5vw;
+    border-radius: 1vw;
+    border: none;
+    background-color: lime;
+    color: darkgoldenrod;
+}
+#answer {
+    margin: 2.5vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    color: #FFFF00;
+    font-family: cursive;
+    font-size: 2vw;
+}
+@media (orientation:portrait) {
+    h1 {
+        font-size: 5vw;
+    }
+    label, input, button {
+        margin: 5vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    label {
+        font-size: 12vw;
+    }
+    input {
+        font-size: 5vw;
+    }
+    button {
+        font-size: 10vw;
+    }
+    #answer {
+        font-size: 6vw;
+    }
+}
